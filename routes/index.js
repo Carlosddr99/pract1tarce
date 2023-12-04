@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-app.use(express.static("images")); 
+router.use(express.static("images")); 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
