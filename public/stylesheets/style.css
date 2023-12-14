@@ -1,6 +1,6 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(252, 248, 242);
 }
 
 a {
@@ -14,7 +14,6 @@ a {
 #titulo{
   display: flex;
   font-size: 50px;
-  padding: 2px;
   color: rgb(253, 212, 5);
   justify-content: center;
   background-color: rgb(55, 29, 80);
@@ -49,4 +48,23 @@ a {
   margin-left: 15px;
   color: whitesmoke;
   text-decoration:none;
+}
+
+#video{
+  display:flex;
+  justify-content: center;
+  margin: 5px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.contenedorColumna {
+  width: 50%;
+  font-size: 20px;
+  margin-left: 15px;
+}
+.grupos {
+  font-size: 28px;
+  color: rgb(55, 55, 115);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }

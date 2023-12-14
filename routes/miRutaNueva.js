@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.use(express.static("images")); 
+const statics = __dirname.replace("routes", "public")
+router.use(express.static(statics))
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });

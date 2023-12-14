@@ -7,5 +7,8 @@ router.use(express.static(statics))
 router.get('/help', function(req, res, next) {
     res.render('help', { title: 'Help Page' });
 });
+router.get('/register', function(req, res, next) {
+    res.render('register');
+});
 
 module.exports = router;
