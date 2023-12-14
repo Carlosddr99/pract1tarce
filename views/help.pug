@@ -1,0 +1,16 @@
+extends layout
+block content
+    link(rel='stylesheet', href='/stylesheets/help.css')
+    <script type="text/javascript" src="javascripts/help.js"></script>
+    <div id="cabecera">
+        <h1>#{title} </h1>
+        <h2 for="lang">Preguntas frecuentes</h2>
+        <select id="select" name="questions" onchange="cambioSelect()">
+            <option value="trabajo">¿Para que sirve la página?</option>
+            <option value="ubicacion">¿Dónde operamos?</option>
+            <option value="ayuda">¿Cómo puedo ayudar?</option>
+        </select><br>
+        <div id="respuesta">
+            <p id="respuestap">Es una plataforma que contribuye en la ayuda de los perros callejeros</p>
+        </div>
+    </div>

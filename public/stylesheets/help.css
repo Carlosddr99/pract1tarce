@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(252, 248, 242);
+}
+#select{
+    width:50%;
+    background-color: rgb(87, 85, 85);
+    color: rgb(246, 250, 253);
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+#respuesta{
+    font-size: 20px;
+    border: solid black;
+    border-radius: 5px;
+    width:50%;
+    background-color: rgb(243, 243, 244);
+}
+
+#respuesta p{
+    margin: 20px;
+}
