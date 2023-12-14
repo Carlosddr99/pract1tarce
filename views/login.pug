@@ -1,6 +1,14 @@
 extends layout
 
 block content
-    <div id="cabecera">
-        Pantalla Login
+    link(rel='stylesheet', href='/stylesheets/login.css')
+    <div id="formulario">
+        <form>
+            <h2>Inicio Sesión</h2>
+            p Correo electronico
+            <input type="email">
+            p Contraseña
+            <input type="password"><br><br>
+            <button>Entrar</button>
+        </form>
     </div>
