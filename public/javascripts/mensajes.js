@@ -38,7 +38,7 @@ const constraints = {
 }
 
 function init(){
-    fetch('http://localhost:3000/misRutasRouter/getMensajes', {
+    fetch('https://pract1tarce.onrender.com/misRutasRouter/getMensajes', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json;charset=utf-8'}
     })
@@ -195,7 +195,7 @@ function almacenarFirebase(mensaje, isAudio){
         "isAudio" :isAudio
     }
 
-    fetch('http://localhost:3000/misRutasRouter/addMensaje', {
+    fetch('https://pract1tarce.onrender.com/misRutasRouter/addMensaje', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json;charset=utf-8'},
         body: JSON.stringify(newMessage)
