@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/mensajes.css')
+    <div id="mensajes"></div>
+    <div id = "form">
+        <div style="font-size:20px; color:blue" >Escibe tu nombre:</div>
+        <input id="nombre" type="text"/>
+        <button id="btnEnviar">Enviar</button>
+        <button onClick="conexionPeer()">Llamar</button>
+        <br>
+        <div id = "formMensaje">
+            <input id="mensaje" type="text" placeholder="Escribe tu mensaje"/>
+            <button onClick="grabarAudio()">Grabar Audio</button>
+        </div>
+        <div id="bloqueAudio">
+            <div id="bloqueBotonesAudio"  style="display:none">
+                <button id="botonGrabar">Grabar</button>
+                <button id="botonStop">Stop</button>
+                <button id="botonCancelar">Cancelar</button>
+                <br>
+                <audio id="audio">
+                <p id="grabando">Grabando....</p>
+            </div>
+        </div>
+    </div>
+    <div id= "peerConecction" style="margin:10px; display:none">
+        <div  style="display:flex; flex-direction:row">
+            <button id="botonCancelarPeer" onClick="cerrarSesion()">Cerrar Sesión</button>
+            <audio id="audioPeer" controls>
+        </div>
+    <div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/mensajes.js"></script>
+
+
