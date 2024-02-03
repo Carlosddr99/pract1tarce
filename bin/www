@@ -3,10 +3,10 @@
 /**
  * Module dependencies.
  */
-
 var app = require('../app');
 var debug = require('debug')('pract1:server');
 var http = require('http');
+var server = http.createServer(app);
 
 /**
  * Get port from environment and store in Express.
@@ -15,11 +15,6 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
-
-var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -88,3 +83,35 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+const socket = require("socket.io");
+const io = socket(server);
+
+const rooms = {};
+
+
+io.on('connection', (socket) => {
+  socket.on('join-room', (roomId) => {
+      socket.join(roomId)
+      socket.emit('user-connected', roomId)
+  })
+
+  socket.on('start_call', (roomId) => {
+    socket.to(roomId).emit('start_call')
+  })
+
+  socket.on('webrtc_offer', (event) => {
+    socket.to(event.roomId).emit('webrtc_offer', event.sdp)
+  })
+
+  socket.on('webrtc_answer', (event) => {
+    socket.to(event.roomId).emit('webrtc_answer', event.sdp)
+  })
+
+  socket.on('webrtc_ice_candidate', (event) => {
+    socket.to(event.roomId).emit('webrtc_ice_candidate', event)
+  })
+  socket.on('close', (event) => {
+    })
+
+})
